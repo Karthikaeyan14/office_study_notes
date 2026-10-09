@@ -1,0 +1,49 @@
+OOPS Technical Term
+
+(https://www.geeksforgeeks.org/python/python-oops-interview-question/)
+
+Class: A blueprint for creating objects, defining their properties and methods.
+Object: An instance of a class.
+
+
+Encapsulation: Bundles data and methods within a class, hiding internal details from outside access.
+Abstraction: Hides complex implementation details and exposes only necessary functionality.
+Inheritance: Allows a new class to inherit properties and methods from an existing class.
+Polymorphism: Enables a single interface to represent different behaviors.
+
+Method overloading ->  Method overloading allows multiple methods with the same name but different parameters.
+Method overriding ->allows a subclass to provide a specific implementation of a method that is already defined in its superclass.
+
+
+from abc import ABC, abstractmethod
+
+# Abstract class
+class Bowler(ABC):
+
+    @abstractmethod
+    def bowl(self):      # only the "what", no details
+        pass
+
+# Fast bowler decides HOW to bowl
+class FastBowler(Bowler):
+    def bowl(self):
+        print("Running fast and bowling at 145 km/h")
+
+# Spin bowler decides HOW to bowl
+class SpinBowler(Bowler):
+    def bowl(self):
+        print("Spinning the ball with fingers")
+
+# Using the classes
+b1 = FastBowler()
+b2 = SpinBowler()
+
+b1.bowl()   # Running fast and bowling at 145 km/h
+b2.bowl()   # Spinning the ball with fingers
+
+
+Cricket	Python code
+"Every bowler can bowl"	class Bowler(ABC) with bowl()
+Fast bowler's style	FastBowler class
+Spinner's style	SpinBowler class
+Captain says "bowl!"	b1.bowl(); he doesn't care how

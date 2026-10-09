@@ -1,0 +1,20 @@
+import { test, expect } from '@playwright/test'; what purpose  
+
+
+The Purpose of Each Piece
+
+* test: This is the test runner and container function. You use it to declare a new test case, name it, and gain access to browser controls (like pages, browser contexts, and cookies) via built-in objects called "fixtures".
+*expect: This is the assertion engine. You use it to verify that your website is behaving correctly (e.g., checking if a button is visible, if text matches, or if a URL changed)
+
+own word: 
+
+• test = Your Test Case (The steps you take, like opening a page, typing text, or clicking a button).
+• expect = Your Expected Result (The validation step that checks if the application matches what you actually wanted to happen).
+If the expect condition is met, your test case passes ✅. If the browser shows something else, your test case fails ❌.
+
+to save the test file name
+filename.spec.ts
+
+ts-> extension
+
+goto -> send the url 

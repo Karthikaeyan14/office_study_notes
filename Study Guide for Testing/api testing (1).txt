@@ -1,0 +1,206 @@
+Common HTTP Status Codes
+Code |  Meaning
+200  -	OK
+201  -	Created
+204  -	No Content
+400  -	Bad Request
+401  -	Unauthorized
+403  -	Forbidden
+404  -	Not Found
+422  -	wrong data	
+500  -	Internal Server Error
+502  -	Bad Gateway
+503  -	Service Unavailable
+
+2XX: Success (Got it, done successfully).
+4XX: Client Error (You made a mistake, like a bad URL or wrong data format)
+5XX: Server Error (The server crashed or messed up).
+
+200 OK: The standard success response for fetching data.
+201 Created: The request succeeded and resulted in a new resource being made.
+204 No Content: The request was successful, but there is no data to send back in the response body.
+
+400 Bad Request: You hit the right destination, but the message you sent was malformed. This happens if your JSON has a syntax error (like a missing comma or quote) or if you miss a strictly required field.
+404 Not Found: You knocked on the wrong door. The server is working fine, but the URL path does not exist on that server. This is usually caused by a typo in the URL or a deleted route.
+401 Unauthorized: Correct. You need a valid login token/access key.
+403 Forbidden: Correct. This is an ACL (Access Control List) or Role-Based access issue. You are logged in, but your role doesn't have the clearance.
+422: Wrong Data Content or Data Type (e.g., sending text when a number is required, or failing validation rules).
+
+200/201: Success (Data fetched / Resource created)204: Success, but no content to send back (like a delete action) 400: Bad Request (Syntax error/broken JSON) 401: Unauthorized (Needs a login/access token) 403: Forbidden (ACL/Role clearance block)404: Not Found (Wrong URL or route)422: Validation Error (Wrong data type or failed validation rules) 500: Internal Server Error (Backend app completely crashed) 502: Bad Gateway (Backend app server is not on/turned off) 504: Gateway Timeout (Backend took too long to respond)
+
+RPC stands for Remote Procedure Call. In RPC, the client calls a function or procedure on the server almost like calling a local function — usually through a single HTTP method, POST, and the function name along with its parameters is passed in the request body. The server then uses the ORM to get the data from the database and returns the response back to the client. For example, in Odoo's RPC API, I used execute_kw and passed the method name and arguments to perform actions.
+
+REST, on the other hand, is resource-based rather than function-based. It uses standard HTTP methods -> GET, POST, PUT, PATCH, DELETE - each mapped to a specific operation on a resource. This makes REST more structured and standardized compared to RPC, where the logic is wrapped inside function calls.
+
+
+In Odoo RPC API testing, we hit the endpoint URL — for example /web/dataset/call_kw — using a POST request. In the request body, we pass data in JSON format, which includes the model name, the method name like create or write, and the field values including relational fields like One2many and Many2many. The ORM picks this up, connects to the PostgreSQL database, and executes the operation. In the response, we get the newly generated record ID — which confirms the record was successfully created. I used to validate this ID in Postman to confirm the test passed.
+
+
+*API Headers*
+
+Headers allow the client (e.g., your browser or application) and the server to communicate behind the scenes. 
+They generally cover four core functions: 
+Authentication: Proving who you are to access private data.
+Content Negotiation: Defining the format of the data being exchanged.
+Caching & Performance: Telling the system how long it can save and reuse data to save time and bandwidth.
+Security & Restrictions: Managing domain permissions and traffic limits
+
+
+what is cookies ->A web cookie is a small text file that a website stores on your computer or device through your web browse
+
+
+To ensure a JSON Schema accurately validates JSON response data so that it matches your database data types, you need to map specific JSON data types and validation keywords to their relational database equivalents
+---------------------------------------------------------------------------------
+
+
+1)Troubleshooting Postman error
+
+1)In Response-> SSL Error(address wrong)
+2)In Response-> ENOTFOUND(in address give some space)
+
+we can see in console:
+%20status%20 ->space in address
+
+2)location. Replace(company network)
+
+
+3)http -> communication protocol
+
+
+client -> server
+client <- server
+
+HTTP Request
+
+Header -> send a addition data
+Request method -> URL /Address
+Body -> Content
+
+4) Collection :
+
+Collection is folder is used to store the multiple folder
+
+set the variable -> URL as variable in the scope we can set as collection
+
+enable the share value in collection
+In the Shared value we can set the value for the password that value cannot be shared
+
+
+
+5)Endpoint -> End of communication channel
+
+REST API -> Resources is get the request based on the End Point
+Visualizing responses in Postman-> Pretty, Raw, Preview, Visualize in the Response Body
+
+Pretty -> Nice to view the response
+Raw -> Extremely hard to read the response
+Preview-> based on html we can see the website (Request : Netflix)
+Visualize ->later (mostly looking white)
+
+
+Query Parameters:
+
+In params section
+Query Params
+
+Add key as query
+after the ? query parameters will showing
+In Query Params
+
+Example {{baseUrl}}/products?category=diary
+
+category= key
+value=diary
+ 
+Shortcuts :Setting-> Shortcuts
+Path Variable-> Path variable is path of the path
+
+Get a Product :
+GET /products/:productid
+
+In params section.
+Path Variables
+KEY -> productid
+Value -> 4643
+
+We must give the value
+
+/:productid -> Path Variable
+?->query Parameter
+
+POST:
+
+JSON :
+{
+ KEY:VALUE
+}
+
+
+https troubleshooting:
+
+1) error->The resource could not be found. Check your endpoint and request method (endpoint error) & wrong method name
+2) error ->The request body could not be parsed.
+
+
+RANDOM DATA
+
+In the value {{$random}}
+
+
+headers -> add some information to the request.
+
+PATCH->partial modifications
+PUT-> Replaces an entire resources
+
+
+Trello:
+Only for 14 days
+
+api key ->5ed9443c95a64db7063edbe9b05bd359
+Token ->ATTA98facbdcec505fa98864fe93afc6e83dad54292c8ab4256ddc9e1dd5422b599b9E4AC822
+
+https://trello.com/b/6t1ibq11/learning-api
+
+
+Test in POSTMAN:
+
+Scripts -> Pre request script, Post Request script 
+Pre request script -> Execute before the script
+Post Request script ->After the execute the script is run (code snippets)
+
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Status is UP", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.status).to.eql("UP");
+})
+
+const-> does not change
+
+code block is {}
+code block we have our own scope, we can define variables without being afraid of colliding with existing variable
+
+let firstName='Jamie'; ->global scope
+
+{
+  let firstName='John'; ->block scope
+  console.log(firstName);
+
+}
+
+global scope is available in the code block
+
+console.log
+console => object
+log => function
+
+Function:
+
+syntax function functionName(name){
+   console.log('${name}');
+}
+
+functionName('Jamie');

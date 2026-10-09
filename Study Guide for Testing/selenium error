@@ -1,0 +1,26 @@
+price_details = div[data-test='inventory-item-price']
+for 
+
+summary_subtotal_label
+
+tax_percentage=8%
+
+
+1) i can processed() in test_cost test
+2) remove_product_from_cart() is also completed
+5)still the test_login.py is working
+
+# selenium error :
+
+The error TypeError: 'WebElement' object is not iterable occurs because you are treating a single HTML element as if it were a list or a collectionl
+In Python, you can only loop over (iterate through) collections like lists, tuples, or dictionaries. This error specifically triggers when you use find_element (which returns one object) and then try to use it in a for loop or unpack it.
+
+
+
+//a //div[@class='inventory_item_name']
+
+
+6GPM Luminor UV bulb	
+
+E-480 UV System
+630582

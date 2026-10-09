@@ -1,0 +1,20 @@
+encoding="utf-8"
+
+
+//button[text()='Add to cart']
+
+📋 The Full Sub-Branch to Main Workflow		
+Step	                               Terminal Command	                                   What It Does (In Simple Terms)
+1. Update Main	git checkout main git pull origin main	Switches you to the main branch and downloads the absolute latest code from GitHub so you don't start with outdated files.
+2. Create Sub-Branch	git checkout  -b my-new -feature	           Creates a  Brand-new  Sub-branch called my-new-feature  And immediately switches you into it.
+3. Write & Check Code (Make your file changes) git status	           You write your code in your code  editor. Running git status shows  You a list of the files you just changed.
+4. Stage the Files	git add .	                                             Gathers all of your modified files and  Gets them ready to be locked into a save point.
+5. Commit Locally   	git commit -m "Added a new feature"	Takes a permanent snapshot of your work  on your local computer with a descriptive  Message.
+6. Push Sub-Branch	git push  origin my- New-feature	           Uploads your sub-branch to GitHub so  Your work is safely backed up in the cloud.
+7. Switch to Main	git checkout main  Git pull origin main	Moves your cursor back onto the  Main branch so it can receive your new work.
+8. Merge Sub-Branch	git merge my-new- Feature --no-edit	            Combines your sub-branch code into main.  The --no-edit flag skips the annoying Nano  Text editor.
+9. Push to GitHub	git push origin main	                                  Sends the newly updated main branch  Up to GitHub. Your project is now fully updated!
+10. Clean Up	           git branch -d my- New-feature	             Safely deletes the local sub-branch  Since its code is now safely inside main.
+
+
+https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html

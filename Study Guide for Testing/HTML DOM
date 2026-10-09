@@ -1,0 +1,251 @@
+An HTML structure is the foundational skeleton of a webpage that tells web browsers how to organize, interpret, and display content. Every standard webpage relies on a fundamental hierarchy of nested tags to establish this layout.
+
+The Standard HTML Boilerplate
+
+Below is the universal structural template required for any compliant HTML5 document:
+
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+</html >
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+    <main>
+        <p>This is where the main content goes.</p>
+    </main>
+    <footer>
+        <p>© 2026 My Company</p>
+    </footer>
+</body>
+</html>
+
+
+Use code with caution.
+Essential Root Elements
+<!DOCTYPE html>: The document type declaration. It forces modern browsers to render pages using the latest HTML5 web standards.
+<html>: The root element of the page. It wraps all other structural components, and its lang attribute specifies the primary text language.
+
+
+The Invisible Section: Head
+
+The <head> tag contains background information (metadata) about the site that does not physically appear on the screen.
+<meta charset="UTF-8">: Configures character encoding to ensure text and special symbols render without glitches.
+<meta name="viewport">: Configures screen dimensions to make layouts fully responsive across mobile devices.
+<title>: Sets the specific title displayed directly on the browser's upper tab.
+Resource Links: Houses references to external assets like CSS stylesheets or JavaScript logic.
+
+The Visible Section: Body
+
+The <body> tag acts as the master container for all visible content served to your site visitors.
+<header>: Groups navigational links, logos, and top-level branding.
+<main>: Encloses the primary, unique substance of the specific document.
+<footer>: Contains copyright info, secondary links, or contact data.
+
+
+Core Content Block Elements
+
+
+<h1> to <h6>: Renders section headings, moving hierarchically from most to least important.
+<p>: Packages blocks of regular running text into distinct paragraphs.
+<a>: Establishes functional hyperlinks using an anchoring target address.
+<img>: Embeds visual image media assets into the layout structure.
+
+
+If you are currently building a page, would you like me to write a specific layout (like a blog or a contact form), or should we look into connecting a CSS stylesheet to style this code?
+
+
+Invisible section -> this section cannot see in the website -> title, head, meta 
+Visible section -> body inset the body that can be see main, header, footer
+Core content -> h1 to h6 and p, a, img tag likewise
+
+-----------------------------------------------------------------------------------
+HTML elements are the foundational building blocks of a webpage that define the structure, semantics, and layout of its content. An element typically consists of a start tag, the inner content, and an end tag
+
+
+<p class="text">This is the content inside a paragraph element.</p>
+│       │       └───────────────────┬───────────────────┘ └──┬──┘
+│       └─ Attribute                │                        └─ Closing Tag
+└─ Opening Tag                      └─ Element Content
+
+
+Component Breakdown
+
+Opening Tag: The element name enclosed in angle brackets (e.g., <p>), which signals where the element begins.
+Attributes: Key-value pairs placed inside the opening tag to provide additional settings or metadata (e.g., class="text", href="").
+Content: The text, images, or nested elements nested between the tags.
+Closing Tag: The element name preceded by a forward slash (e.g., </p>), signaling the end of the element.
+
+-------------------------------------------------------------
+Html Attributes
+HTML attributes provide additional information, configuration, and behavioral controls for HTML elements. They are always placed inside the opening tag of an element and typically appear as name="value" pairs.
+
+Structure of an Attribute
+
+<tagname attribute_name="attribute_value">Content</tagname>
+
+Attribute Name: Identifies what property you are setting (e.g., href, src, class).
+Attribute Value: Specifies the actual configuration, typically wrapped in double quotes.
+
+
+
+Core Categories of Attributes
+
+1. Global Attributes
+These can be used on any HTML element.
+id: Assigns a unique identifier to target an element with CSS or JavaScript.
+class: Assigns non-unique classes to group elements for collective CSS styling.
+style: Applies inline CSS rules directly to the element.
+title: Adds extra context that pops up as a tooltip on hover.
+lang: Declares the primary language of the element's content.
+
+
+2. Element-Specific Attributes
+These work only with specific tags to fulfill their functional requirements.
+Links (<a>): Use href to declare the destination URL.
+Images (<img>): Use src for the image path, alt for backup descriptive text, and width/height for layout dimensions.
+Forms (<form>): Use action to establish the data destination and method to set the HTTP submission type.
+Inputs (<input>): Use type to toggle input fields (e.g., text, password, checkbox, file).
+
+
+
+3. Boolean Attributes
+These attributes alter element state simply by being present in the opening tag. No value assignment is necessary.
+disabled: Deactivates user interaction for form controls.
+checked: Marks checkboxes or radio buttons as active by default.
+required: Mandates that a form field must be filled before submission.
+
+
+
+4. Custom Data Attributes
+data-*: Allows developers to store custom, private metadata directly on standard HTML elements to easily exchange data with JavaScript.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+HTML forms are used to collect user input on web pages and send that data to a server for processing. Every form is defined using the wrapper <form> tag, which encloses various interactive controls like text boxes, checkboxes, radio buttons, and submit buttons. Over 85% of websites rely on forms to handle crucial user interactions like logging in, registration, or sending search queries.
+
+Core Form Attributes
+
+The <form> element requires two main structural attributes to manage data submission properly:
+
+#Action: Specifies the URL or server endpoint where the data is sent upon submission.
+#method: Defines the HTTP method used to transfer data, typically GET or POST.
+  
+Attribute Value            Visibility                                                         Security                                                                                     Data Limits                                                      Common Use Case
+GET                       Appends data directly to the  URL                  None (Visible in address bar)                                                  Limited by URL length                                                  Search fields                                                                    
+POST                   Embeds data inside the HTTP request body        Better protection for data transits                                             No strict limits                                                               Password fields and logins
+            
+            
+Key Form Elements & Elements Controls
+
+A basic form consists of distinct semantic elements working together to collect information:
+
+<label>: Provides an explicit text descriptor for a control, crucial for web accessibility.
+<input>: The most common and flexible form element, customized entirely by its type attribute.
+<textarea>: Creates a multi-line text input field used for comments, reviews, or longer descriptions.
+<select> & <option>: Creates a dropdown menu selection layer.
+<button>: Triggers actions like form clearing or data submission.
+
+Common Input Types
+
+The <input> control alters its entire functionality depending on the type declaration:
+
+type="text": Default single-line textbox for general words or names.
+type="password": Masks typed text to protect highly sensitive information.
+type="email": Automatically validates that the user enters a syntactically correct email structure.
+type="checkbox": Allows users to check off multiple items simultaneously from a single group.
+type="radio": Forces users to select only one choice out of a pre-configured group.
+type="submit": Renders a button that packages data and transmits it to the server endpoint.   
+
+----------------------------------------
+
+DOM:
+A DOM tree (Document Object Model tree) is a hierarchical, branching structure created by web browsers to represent an HTML or XML document in memory. It converts raw source code tags into functional, programmable objects that languages like JavaScript can read, modify, and style in real time.
+
+Structure and Anatomy
+
+
+The DOM tree organizes a web page into parent-child relationships, mirroring how your code is nested:
+
+Document (Root Node): The entry point into the tree representing the entire page.
+Element Nodes: The structural HTML tags (e.g., <html>, <body>, <div>).
+Text Nodes: The literal text contained within an element.
+Attribute Nodes: Key-value data inside tags, like href or class.
+Comment Nodes: Hidden annotations left in your HTML code.
+
+Visual Representation
+
+If you have a basic HTML document, its DOM layout transforms like this:
+
+<!-- HTML Code -->
+<html>
+  <head>
+    <title>My Page</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+  </head>
+</html>
+
+
+<!-- Corresponding DOM Tree Structure -->
+                 [Document]
+                       │
+                   <html>
+        ┌─────┴─────┐
+     <head>                   <body>
+        │                             │
+     <title>                       <h1>
+        │                              │
+    "My Page"            "Hello World"
+
+
+Tree Node Relationships
+
+Nodes are described using family tree terminology based on their structural layout:
+Parent: A node directly above another (e.g., <body> is the parent of <h1>).
+Child: A node directly inside another (e.g., <title> is a child of <head>).
+Sibling: Nodes sharing the exact same parent (e.g., <head> and <body> are siblings).
+Descendant: Any node nested deep inside another at any lower tier.
+                         
+Dynamic web element:
+
+Click the "like" button -> There is reload a whole webpages
+The dynamic web element is referes, In the dynamic responsive webpage there is a update or any changes occur in webpages without required refresh or reload the ful webpages 
+  
+---------------------
+
+CSS
+  
+CSS Selector:
+Select the specific html element so you apply the style for them.
+
+IDs:
+
+ID selector in CSS is used target a single and unqiue element on webelement
+
+Classes:
+
+Resuable attributes used to target and style multiple html element simultaneously.
+
+CSS Combinators:
+
+CSS combinators are symbols or spaces used to combine multiple selectors to target elements based on their exact structural relationship within the HTML DOM tree. Instead of just selecting an element by its type or class name, combinators explain how the target element must be positioned relative to another element.
+
+
+Quick Overview  Table
+
+Combinator  Name           Symbol / Sign                    Example  Selector                   Target Element Selection
+Descendant                       (space)                                  div p                                   All <p> nested anywhere inside a <div>.
+Child                                >                                         div >                                   Only <p> that are direct children of a <div>. 
+Adjacent Sibling                 +                                        div + p                                 The very first <p> immediately following a <div>.
+Subsequent Sibling            ~                                          div~ p                                All <p> siblings that come after a <div>.
+
